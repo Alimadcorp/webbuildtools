@@ -3,7 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Credits</title>
+    <title>How to use Web Build Tools</title>
+  </head>
+  <body>
+    <h3>Unity Web Build Tools</h3>
+    <h3>Release 1.0</h3>
+    <h3>Made by Muhammad Ali</h3>
+    <br />
+    <h1>How To Use</h1>
+
+    <details>
+      <summary>I can change this too.</summary>
+      <div class="content">
+        <p>
+          Uhh
+        </p>
+        <img src="https://placebear.com/400/200" alt="" />
+      </div>
+    </details>
+
+    <h4>
+      <a href="https://alimadcorp.github.io/unitywebtools"
+        >Web Build Tools Github Page</a
+      >
+    </h4>
+    <h4>
+      <a href="https://alimadcorp.github.io/site/social.html">More Links</a>
+    </h4>
+
+    <!--Styling-->
     <style>
       @import url(https://fonts.googleapis.com/css2?family=Iceberg&family=Lexend+Deca:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap);
       body {
@@ -11,14 +39,151 @@
         margin: 0;
         font-family: "Iceberg", serif;
       }
+      summary {
+        border: 4px solid transparent;
+        outline: none;
+        &:focus {
+          border-color: black;
+        }
+        padding: 1rem;
+        display: block;
+        background: #444;
+        color: white;
+        padding-left: 2.2rem;
+        position: relative;
+        cursor: pointer;
+      }
+      details {
+        max-width: 500px;
+        box-sizing: border-box;
+        margin-top: 5px;
+        background: white;
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details[open] > summary:before {
+        transform: rotate(90deg);
+      }
+      summary:before {
+        content: "";
+        border-width: 0.4rem;
+        border-style: solid;
+        border-color: transparent transparent transparent #fff;
+        position: absolute;
+        top: 1.3rem;
+        left: 1rem;
+        transform: rotate(0);
+        transform-origin: 0.2rem 50%;
+        transition: 0.25s transform ease;
+      }
+
+      .content {
+        border-top: none;
+        padding: 10px;
+        border: 2px solid #888;
+        border-top: none;
+      }
+
+      p {
+        margin: 0;
+        padding-bottom: 10px;
+        &:last-child {
+          padding: 0;
+        }
+      }
+      img {
+        max-width: 100%;
+      }
     </style>
-  </head>
-  <body>
-        <h3>Unity Web Build Tools</h3>
-        <h3>Release 1.0</h3>
-        <h3>Made by Muhammad Ali</h3><br>
-        <h1>How To Use</h1><br>
-        <h4><a href="https://alimadcorp.github.io/unitywebtools">Web Build Tools Github Page</a></h4>
-        <h4><a href="https://alimadcorp.github.io/site/social.html">More Links</a></h4>
+    <!--Scripts-->
+    <script>
+      // Summary details animation by Chris Coyier
+      class Accordion {
+        constructor(el) {
+          this.el = el;
+          this.summary = el.querySelector("summary");
+          this.content = el.querySelector(".content");
+          this.animation = null;
+          this.isClosing = false;
+          this.isExpanding = false;
+          this.summary.addEventListener("click", (e) => this.onClick(e));
+        }
+
+        onClick(e) {
+          e.preventDefault();
+          this.el.style.overflow = "hidden";
+          if (this.isClosing || !this.el.open) {
+            this.open();
+          } else if (this.isExpanding || this.el.open) {
+            this.shrink();
+          }
+        }
+
+        shrink() {
+          this.isClosing = true;
+          const startHeight = `${this.el.offsetHeight}px`;
+          const endHeight = `${this.summary.offsetHeight}px`;
+
+          if (this.animation) {
+            this.animation.cancel();
+          }
+
+          this.animation = this.el.animate(
+            {
+              height: [startHeight, endHeight],
+            },
+            {
+              duration: 400,
+              easing: "ease-out",
+            }
+          );
+
+          this.animation.onfinish = () => this.onAnimationFinish(false);
+          this.animation.oncancel = () => (this.isClosing = false);
+        }
+
+        open() {
+          this.el.style.height = `${this.el.offsetHeight}px`;
+          this.el.open = true;
+          window.requestAnimationFrame(() => this.expand());
+        }
+
+        expand() {
+          this.isExpanding = true;
+          const startHeight = `${this.el.offsetHeight}px`;
+          const endHeight = `${
+            this.summary.offsetHeight + this.content.offsetHeight
+          }px`;
+
+          if (this.animation) {
+            this.animation.cancel();
+          }
+          this.animation = this.el.animate(
+            {
+              height: [startHeight, endHeight],
+            },
+            {
+              duration: 400,
+              easing: "ease-out",
+            }
+          );
+          this.animation.onfinish = () => this.onAnimationFinish(true);
+          this.animation.oncancel = () => (this.isExpanding = false);
+        }
+
+        onAnimationFinish(open) {
+          this.el.open = open;
+          this.animation = null;
+          this.isClosing = false;
+          this.isExpanding = false;
+          this.el.style.height = this.el.style.overflow = "";
+        }
+      }
+
+      document.querySelectorAll("details").forEach((el) => {
+        new Accordion(el);
+      });
+    </script>
   </body>
 </html>
