@@ -8,7 +8,10 @@ Some tools to improve your unity web builds!
 
 ## How to Install MadWeb Template
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vv8LwzHYqEw?si=PQjbYcYdzOfVh7Nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vv8LwzHYqEw?si=PQjbYcYdzOfVh7Nc" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 # Documentation and Help
 
