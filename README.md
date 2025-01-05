@@ -1,14 +1,16 @@
-# webbuildtools
 Some tools to improve your unity web builds!
-# How to Use Web Build Tools
 
 ---
 
-## Unity Web Build Tools Help
+## Unity Web Build Tools
 
 ---
 
 ## How to Install MadWeb Template
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vv8LwzHYqEw?si=PQjbYcYdzOfVh7Nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+# Documentation and Help
 
 <details>
   <summary>**Step 1: Copy the "MadWeb Template" folder into .../Unity Hub\Editor\YourUnityVersion\Editor\Data\PlaybackEngines\WebGLSupport\BuildTools\WebGLTemplates**</summary>
@@ -79,7 +81,9 @@ Some tools to improve your unity web builds!
   
   Open "Multi Web Build" or the renamed folder and edit the `index.html` directly inside it.  
   Add new versions using:
+  ```
   <a href="#" onclick="loadVersion('vn')">Version N</a>
+  ```
 </details>
 
 ---
