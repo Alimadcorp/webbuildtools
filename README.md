@@ -14,7 +14,7 @@ Some tools to improve your unity web builds!
 # Documentation and Help
 
 <details>
-  <summary>  **Step 1: Copy the "MadWeb Template" folder into .../Unity Hub\Editor\YourUnityVersion\Editor\Data\PlaybackEngines\WebGLSupport\BuildTools\WebGLTemplates**  </summary>
+  <summary><b>Step 1: Copy the "MadWeb Template" folder into .../Unity Hub\Editor\YourUnityVersion\Editor\Data\PlaybackEngines\WebGLSupport\BuildTools\WebGLTemplates</b></summary>
   
   Copy the "MadWeb Template" folder present in the download.  
   [Locate your unity editor install location.](https://docs.unity3d.com/2018.2/Documentation/Manual/GettingStartedInstallingHub.html#:~:text=of%20the%20Hub.-,Click%20the%20Installs%20tab.,and%20select%20the%20Unity%20executable.)  
