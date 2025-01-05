@@ -52,7 +52,7 @@
 
 ---
 
-## Multi Web Builds
+## How to use Multi Web Builds
 
 <details>
   <summary><b> Step 1: Make a copy of "Multi Web Build" folder and rename it to whatever you want.</b></summary>
