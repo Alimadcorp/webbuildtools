@@ -1,17 +1,13 @@
-Some tools to improve your unity web builds!
+# Some tools to improve your unity web builds!
 
 ---
 
 ## Unity Web Build Tools
 
+[Video Tutorial](https://www.youtube.com/watch?v=vv8LwzHYqEw)
 ---
 
 ## How to Install MadWeb Template
-
-[Video Tutorial](https://www.youtube.com/watch?v=vv8LwzHYqEw)
-
-
-# Documentation and Help
 
 <details>
   <summary><b>Step 1: Copy the "MadWeb Template" folder into .../Unity Hub\Editor\YourUnityVersion\Editor\Data\PlaybackEngines\WebGLSupport\BuildTools\WebGLTemplates</b></summary>
