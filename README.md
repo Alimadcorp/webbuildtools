@@ -24,21 +24,21 @@ Some tools to improve your unity web builds!
 </details>
 
 <details>
-  <summary> ** Step 2: Select MadWeb Template in Project Settings > Player > Resolution and Presentation ** </summary>
+  <summary><b> Step 2: Select MadWeb Template in Project Settings > Player > Resolution and Presentation</b></summary>
   
   [View detailed info here.](https://docs.unity3d.com/Manual/web-templates-intro.html)  
   ![Select template](Screenshots/respreswindow.png)
 </details>
 
 <details>
-  <summary> ** Step 3: Export a Web Build ** </summary>
+  <summary><b> Step 3: Export a Web Build</b></summary>
   
   Do you really need a summary for this??  
   ![Preview](Screenshots/view.png)
 </details>
 
 <details>
-  <summary> ** Customization ** </summary>
+  <summary><b> Customization</b></summary>
 
   -  ** Change the font by replacing `TemplateData/font.ttf` **   
     Make sure to replace with the same name.
@@ -59,14 +59,14 @@ Some tools to improve your unity web builds!
 ## Multi Web Builds
 
 <details>
-  <summary> ** Step 1: Make a copy of "Multi Web Build" folder and rename it to whatever you want. ** </summary>
+  <summary><b> Step 1: Make a copy of "Multi Web Build" folder and rename it to whatever you want.</b></summary>
   
   Copy it somewhere outside of this downloads folder.  
   ![Copy the folder](Screenshots/copyoffolder.png)
 </details>
 
 <details>
-  <summary> ** Step 2: Paste the contents of your first web build into the "v1" folder, second web build into "v2" folder, and so on. ** </summary>
+  <summary><b> Step 2: Paste the contents of your first web build into the "v1" folder, second web build into "v2" folder, and so on.</b></summary>
   
   Make sure that `index.html` is directly accessible in those folders.  
   ![Paste version 1](Screenshots/paste%20(1).png)  
@@ -74,11 +74,11 @@ Some tools to improve your unity web builds!
 </details>
 
 <details>
-  <summary> ** Step 3: Zip the Multi Web Build folder you renamed and upload to itch.io. ** </summary>
+  <summary><b> Step 3: Zip the Multi Web Build folder you renamed and upload to itch.io.</b></summary>
 </details>
 
 <details>
-  <summary> ** If you have more than 2 builds or want to name the builds, edit `index.html`. ** </summary>
+  <summary><b> If you have more than 2 builds or want to name the builds, edit `index.html`.</b></summary>
   
   Open "Multi Web Build" or the renamed folder and edit the `index.html` directly inside it.  
   Add new versions using:
