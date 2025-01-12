@@ -7,7 +7,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'DefaultFont', serif;
-    background-color: #000;
+    background-color: #fff;
+	color: #000;
 }
 
 #unity-container {
@@ -27,7 +28,7 @@ body {
 }
 
 #unity-canvas {
-    background: #00000000
+    background: #fff
 }
 
 .unity-mobile #unity-canvas {
@@ -48,7 +49,7 @@ body {
     margin-top: 10px;
     margin-left: 6.5px;
     background-color: #0000;
-    border: 3px solid #fff;
+    border: 3px solid #000;
     padding: 3px 3px;
     border-radius: 12px;
     visibility: visible;
@@ -57,9 +58,9 @@ body {
 }
 
 #unity-progress-bar-full {
-    width: 0%;
+    width: 1%;
     height: 100%;
-    background-color: #fff;
+    background-color: #000;
     border: none;
     border-radius: 9px;
     transition: width 0.4s linear;
@@ -69,7 +70,6 @@ body {
 #unity-build-title {
     float: left;
     margin-right: 10px;
-    color:wheat;
     line-height: 38px;
     font-size: 18px
 }
@@ -100,7 +100,6 @@ body {
     right: 0;
     text-align: center;
     font-size: 24px;
-    color: white;
 }
 #loading-footer {
     position: absolute;
@@ -110,5 +109,4 @@ body {
     left: 0;
     right: 0;
     font-size: 24px;
-    color: white;
 }
