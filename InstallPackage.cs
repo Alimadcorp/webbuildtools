@@ -9,7 +9,7 @@ using System.Collections.Generic;
 /*
 Ho ho ho
 You have made it into the code of Alimad.Main
-If ur looking for smth, you may look at https://github.com/Alimadcorp/webbuildtools (Documentation)
+If ur looking for smth, you may also look at https://github.com/Alimadcorp/webbuildtools (Documentation)
 */
 
 namespace Alimad.Main
@@ -87,36 +87,39 @@ namespace Alimad.Main
             {
                 ExportBuild();
             }
+            
             if (GUILayout.Button("View Video Tutorial"))
             {
-                Application.OpenURL("https://alimadcorp.github.io/extras/wbt.html");
+                Application.OpenURL("https://www.youtube.com/watch?v=Wr8rXc35Y0Y");
             }
         }
         public void SetTemplate(string tamplateName)
         {
             PlayerSettings.WebGL.template = tamplateName;
         }
-        public string WBTFolder()
+        public string WBTFolder(bool arc)
         {
             string defaultPath = Application.dataPath + "/WebBuildTools"; // Ideal path
-            if (Directory.Exists(defaultPath)) { return defaultPath; }
+            if (Directory.Exists(defaultPath)) { return defaultPath + (arc ? "" : "/Templates"); }
             defaultPath = Application.dataPath + "/Unity Technologies/WebBuildTools"; // Look inside the unity techs folder
-            if (Directory.Exists(defaultPath)) { return defaultPath; }
+            if (Directory.Exists(defaultPath)) { return defaultPath + (arc ? "" : "/Templates"); }
 
             Debug.LogError("WebBuildTools folder not found in the Assets directory.");
             return null;
         }
         public void InstallTemplates()
         {
-            string FPD = WBTFolder();   // Current folder of the web build assets
+            string FPD = WBTFolder(false);   // Current folder of the web build assets
+            Debug.Log(FPD);
             if (FPD == null)
             {
                 EditorUtility.DisplayDialog("Error", "Assets/Web Build Tools not found in the project or are corrupted. Please consider reinstall", "OK");
+                Application.OpenURL(WBTFolder(true) + "/Documentation/Documentation.html#howtoinstall");
                 return;
             }
             try
             {
-                // Looks pretty complex but it just copies the contents of madweb template into the unity webgl templates folder
+                // Look I am too stupid to do something cleaner than this
                 if (!CopyFiles(FPD + "/MadWeb Template",
                 EditorApplication.applicationPath.Replace("Unity.exe", "") + "Data/PlaybackEngines/WebGLSupport/BuildTools/WebGLTemplates/MadWeb Template")) { return; }
                 if (!CopyFiles(FPD + "/MadWeb Template/TemplateData",
@@ -158,8 +161,15 @@ namespace Alimad.Main
                     string extension = Path.GetExtension(file);
                     if (extension != ".meta")
                     {
+                        try{
                         string fileName = Path.GetFileName(file);
                         File.Copy(file, Path.Combine(targetPath, fileName), true);
+                        }
+                        catch(System.UnauthorizedAccessException ex){
+                            // Cuz unity is installed in C://Program Files most of the time, we won't have access to it
+                            EditorUtility.DisplayDialog("Error", $"Copy access denied to {targetPath}.", "OK");
+                            Application.OpenURL(WBTFolder(true) + "/Documentation/Errors/ifnoaccess.txt");
+                        }
                     }
                 }
                 catch (System.Exception ex)
@@ -172,7 +182,7 @@ namespace Alimad.Main
         }
         public void ExportBuild()
         {
-            string sourceHTMLPath = WBTFolder() + "/Multi Web Build/";
+            string sourceHTMLPath = WBTFolder(true) + "/Multi Web Build/";
 
             if (!File.Exists(sourceHTMLPath + "index.html"))
             {

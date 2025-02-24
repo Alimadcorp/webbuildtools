@@ -116,9 +116,6 @@
             unityDiagnostics.openDiagnosticsDiv(unityInstance.GetMetricsInfo);
           };
           #endif
-          document.querySelector("#unity-fullscreen-button").onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
           #if DEVELOPMENT_PLAYER
           var quit = document.createElement("button");
           quit.style = "margin-left: 5px; background-color: lightgray; border: none; padding: 5px; cursor: pointer";
@@ -164,7 +161,6 @@
           });
         }).catch(error => {
           console.error(error);
-          document.getElementById('loading-footer').innerHTML = "Error loading subtitles.";
         });
       });
 
